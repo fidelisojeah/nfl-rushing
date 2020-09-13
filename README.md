@@ -54,4 +54,63 @@ We will evaluate you on your ability to solve the problem defined in the require
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
 
 ### Installation and running this solution
-... TODO
+
+Before Installation, ensure you have node.js and mongo db installed on your device.
+
+-   Clone the Repository
+
+```bash
+git clone git@github.com:fidelisojeah/nfl-rushing.git
+```
+
+-   Install Dependencies
+
+```bash
+npm install
+```
+
+-   Configure Environment Variables
+
+    > -   Configure Environment Variables as specified [Here](#configure-environment-variables)
+
+#### Running the application
+
+##### For testing
+
+The applications tests are run with jest
+
+```bash
+npm run test
+```
+
+##### For development
+
+The application uses nodemon to enable quick reload on changes
+
+```bash
+npm run start:dev
+```
+
+##### Running with Docker
+
+it is possible to run the application with docker.
+
+Simply have docker installed on your machine.
+
+```bash
+docker-compose up
+```
+
+##### For production
+
+...
+
+#### Configure Environment Variables
+
+The following Environment variables need to be set and exported for application to function properly
+
+```
+MONGO_URI= The database credentials
+SECRET= the secret used for jwt authentication
+LOGGER_LEVEL=debug
+```
