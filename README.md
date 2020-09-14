@@ -135,6 +135,5 @@ The following Environment variables need to be set and exported for application 
 
 ```
 MONGO_URI= The database credentials
-SECRET= the secret used for jwt authentication
 LOGGER_LEVEL=debug
 ```
