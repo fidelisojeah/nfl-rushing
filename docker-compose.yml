@@ -1,4 +1,4 @@
-version: "3.1"
+version: '3.1'
 
 services:
     database:
@@ -6,12 +6,13 @@ services:
         restart: always
 
     application:
-        build: "./"
+        build: './'
         command: npm run start
         restart: always
         ports:
-            - "3000:3000"
+            - '3000:3000'
         environment:
+            - REACT_APP_IS_SERVED=true
             - MONGO_URI=mongodb://database:27017/nfl_rushing
             - LOGGER_LEVEL=${LOGGER_LEVEL}
             - NODE_ENV=${NODE_ENV}
