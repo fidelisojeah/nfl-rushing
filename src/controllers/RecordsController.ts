@@ -77,7 +77,8 @@ export class RecordsController extends BaseController {
                 meta: {
                     page: Number(page),
                     count,
-                    limit: actualLimit
+                    limit: actualLimit,
+                    totalPages: Math.ceil(count / actualLimit)
                 }
             },
             RecordsSerializer

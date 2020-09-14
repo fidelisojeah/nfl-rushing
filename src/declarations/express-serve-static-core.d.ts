@@ -8,6 +8,7 @@ interface IResponse {
         count: number;
         page: number;
         limit: number;
+        totalPages: number;
         [key:string]: string | number | null;
     };
     status?: any;
