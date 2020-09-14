@@ -5,6 +5,7 @@ import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import http, { Server } from 'http';
 import morgan from 'morgan';
+import cors from 'cors';
 import mongoose from 'mongoose';
 
 import './utils/load-envs';
@@ -132,6 +133,7 @@ export class Application {
     private configureServer() {
         this.app.use(compression());
         this.app.use(helmet());
+        this.app.use(cors());
         this.app.use(express.json({ type: 'application/json' }));
         this.app.use(express.urlencoded({ extended: false }));
 
