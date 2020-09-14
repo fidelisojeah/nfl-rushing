@@ -1,0 +1,11 @@
+build/*
+dist/*
+coverage/*
+junit.xml
+*.log
+*.local
+node_modules
+cache/*
+test/*
+client/node_modules
+client/build

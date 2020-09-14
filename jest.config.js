@@ -1,6 +1,6 @@
 module.exports = {
     collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.ts', '!src/declarations/**/*', '!test'],
+    collectCoverageFrom: ['src/**/*.ts', '!src/declarations/**/*', '!test', '!client'],
     moduleFileExtensions: ['ts', 'js'],
     testMatch: ['**/*.test.(ts|js)'],
     testEnvironment: 'node',

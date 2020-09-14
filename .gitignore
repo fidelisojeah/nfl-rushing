@@ -41,6 +41,11 @@ build/Release
 # dotenv environment variables file
 .env
 .env.test
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 junit.xml
 .DS_Store

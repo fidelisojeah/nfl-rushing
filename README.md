@@ -69,6 +69,13 @@ git clone git@github.com:fidelisojeah/nfl-rushing.git
 npm install
 ```
 
+-   Install Frontend Dependencies
+
+```bash
+cd client
+npm install
+```
+
 -   Configure Environment Variables
 
     > -   Configure Environment Variables as specified [Here](#configure-environment-variables)
@@ -85,11 +92,28 @@ npm run test
 
 ##### For development
 
-The application uses nodemon to enable quick reload on changes
+The backend of the application uses nodemon to enable quick reload on changes
 
 ```bash
 npm run start:dev
 ```
+
+The frontend of the application is bootstraped with create react app. Running it involves 
+
+-   Starting up the backend
+
+-   Moving into the client folder
+
+```bash
+cd client
+```
+-   Starting up the client application
+
+```bash
+npm run start
+```
+
+> If you had set the `PORT` env variable for the backend, ensure you set the `REACT_APP_SERVER` to point to the backend
 
 ##### Running with Docker
 

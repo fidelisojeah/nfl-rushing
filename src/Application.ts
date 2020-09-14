@@ -7,6 +7,7 @@ import http, { Server } from 'http';
 import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import path from 'path';
 
 import './utils/load-envs';
 import { RecordsController } from './controllers';
@@ -162,10 +163,7 @@ export class Application {
         this.app.use('/healthcheck', this.onHealthCheck());
 
         this.app.use('/v1/records', RecordsController);
-
-        this.app.get('/', (_: Request, response: Response) =>
-            response.responseModule({ message: 'Welcome to the application.' })
-        );
+        this.serveFrontend();
         this.app.use(notFound);
         this.app.use(errorHandler);
     }
@@ -184,6 +182,20 @@ export class Application {
         }
 
         return false;
+    }
+
+    private serveFrontend() {
+        if (!process.env.REACT_APP_IS_SERVED) {
+            return this.app.get('/', (_: Request, response: Response) =>
+                response.responseModule({ message: 'Welcome to the application.' })
+            );
+        }
+
+        const DIST_DIR = path.join(__dirname, '../client/build');
+        const HTML_FILE = path.join(DIST_DIR, 'index.html');
+
+        this.app.use(express.static(DIST_DIR));
+        this.app.get('/*', (_, response) => response.sendFile(HTML_FILE));
     }
 }
 

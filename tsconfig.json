@@ -17,5 +17,6 @@
         "strict": true,
         "inlineSourceMap": true
     },
-    "include": ["src"]
+    "include": ["src"],
+    "exclude": ["client", "node_modules", "build", "dist"]
 }
